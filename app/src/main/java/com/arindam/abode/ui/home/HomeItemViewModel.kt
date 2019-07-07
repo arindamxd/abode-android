@@ -1,5 +1,6 @@
 package com.arindam.abode.ui.home
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
 import com.arindam.abode.data.db.RoomDatabaseService
@@ -21,6 +22,6 @@ class HomeItemViewModel @Inject constructor(
     val date: LiveData<String> = Transformations.map(data) { it.timestamp }
 
     fun onItemClick(position: Int) {
-
+        Log.e("XD", "onItemClick $position")
     }
 }

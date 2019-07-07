@@ -62,13 +62,11 @@ abstract class BaseItemViewHolder<T : Any, VM : BaseItemViewModel<T>>(
     private fun buildViewHolderComponent() =
         DaggerViewHolderComponent
             .builder()
-            .applicationComponent(
-                (itemView.context.applicationContext as TaskApplication).applicationComponent
-            )
+            .applicationComponent((itemView.context.applicationContext as TaskApplication).applicationComponent)
             .viewHolderModule(ViewHolderModule(this))
             .build()
 
-    protected open fun setupObservers() {}
     protected abstract fun injectDependencies(viewHolderComponent: ViewHolderComponent)
+    protected open fun setupObservers() {}
     abstract fun setupView(view: View)
 }
