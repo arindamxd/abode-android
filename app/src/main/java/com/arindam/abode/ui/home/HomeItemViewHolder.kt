@@ -1,12 +1,12 @@
 package com.arindam.abode.ui.home
 
-import android.util.Log
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import com.arindam.abode.R
 import com.arindam.abode.data.db.entity.NoteEntity
 import com.arindam.abode.di.component.ViewHolderComponent
 import com.arindam.abode.ui.base.BaseItemViewHolder
+import kotlinx.android.synthetic.main.layout_home_item_view.view.*
 
 /**
  * Created by Arindam Karmakar on 2019-07-08.
@@ -22,9 +22,14 @@ class HomeItemViewHolder(
     override fun setupObservers() {
         super.setupObservers()
 
+        viewModel.title.observe(this, Observer {
+            itemView.itemTitle.text = it
+        })
         viewModel.description.observe(this, Observer {
-            Log.e("XD", it)
-            //itemView.description.text = it
+            itemView.itemNote.text = it
+        })
+        viewModel.date.observe(this, Observer {
+            itemView.itemDate.text = it
         })
     }
 }

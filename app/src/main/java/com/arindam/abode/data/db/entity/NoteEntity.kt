@@ -3,6 +3,7 @@ package com.arindam.abode.data.db.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.arindam.abode.utils.getCurrentTimeStamp
 import org.jetbrains.annotations.NotNull
 
 /**
@@ -21,5 +22,9 @@ data class NoteEntity(
     var title: String? = null,
 
     @ColumnInfo(name = "description")
-    var description: String? = null
+    var description: String? = null,
+
+    @NotNull
+    @ColumnInfo(name = "timestamp")
+    var timestamp: String = getCurrentTimeStamp()
 )

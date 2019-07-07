@@ -15,5 +15,7 @@ class HomeItemViewModel @Inject constructor(
     roomDatabaseService: RoomDatabaseService
 ) : BaseItemViewModel<NoteEntity>(roomDatabaseService) {
 
+    val title: LiveData<String> = Transformations.map(data) { it.title }
     val description: LiveData<String> = Transformations.map(data) { it.description }
+    val date: LiveData<String> = Transformations.map(data) { it.timestamp }
 }
