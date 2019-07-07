@@ -23,8 +23,7 @@ class WriteActivity : BaseActivity<WriteViewModel>() {
 
         backButton.setOnClickListener { finish() }
         saveButton.setOnClickListener {
-            val note = noteText.text.toString()
-            viewModel.saveNote(note)
+            viewModel.saveNote(noteText.text.toString())
             finish()
         }
     }

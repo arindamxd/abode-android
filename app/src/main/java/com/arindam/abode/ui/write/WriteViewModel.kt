@@ -4,9 +4,7 @@ import androidx.lifecycle.viewModelScope
 import com.arindam.abode.data.db.RoomDatabaseService
 import com.arindam.abode.data.db.entity.NoteEntity
 import com.arindam.abode.ui.base.BaseViewModel
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
 /**
@@ -14,9 +12,6 @@ import kotlinx.coroutines.launch
  */
 
 class WriteViewModel(roomDatabaseService: RoomDatabaseService) : BaseViewModel(roomDatabaseService) {
-
-    private val viewModelJob = Job()
-    private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
     fun saveNote(note: String) {
         viewModelScope.launch(Dispatchers.IO) {

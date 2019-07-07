@@ -16,12 +16,11 @@
 
         <ImageView
                 android:id="@+id/backButton"
-                android:layout_width="23dp"
-                android:layout_height="23dp"
-                android:layout_margin="10dp"
-                android:layout_centerVertical="true"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="12dp"
                 android:src="@drawable/ic_arrow_back_black_24dp"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:contentDescription="@string/button_back"/>
 
         <com.arindam.abode.utils.widgets.CustomFontTextView

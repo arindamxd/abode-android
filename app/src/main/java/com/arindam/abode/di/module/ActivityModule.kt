@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.arindam.abode.data.db.RoomDatabaseService
 import com.arindam.abode.ui.base.BaseActivity
+import com.arindam.abode.ui.home.HomeAdapter
 import com.arindam.abode.ui.home.HomeViewModel
 import com.arindam.abode.ui.write.WriteViewModel
 import com.arindam.abode.utils.factory.ViewModelProviderFactory
@@ -33,4 +34,7 @@ class ActivityModule(private val activity: BaseActivity<*>) {
 
     @Provides
     fun provideLinearLayoutManager(): LinearLayoutManager = LinearLayoutManager(activity)
+
+    @Provides
+    fun provideHomeAdapter() = HomeAdapter(activity.lifecycle, ArrayList())
 }

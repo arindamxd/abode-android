@@ -8,6 +8,7 @@
     <string name="button_back">back button</string>
     <string name="button_save">save button</string>
 
+    <string name="notes">Notes</string>
     <string name="note_new">New Note</string>
     <string name="note_edit">Edit Note</string>
     <string name="note_hint">Write here...</string>

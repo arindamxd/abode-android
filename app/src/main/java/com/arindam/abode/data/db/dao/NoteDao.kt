@@ -1,6 +1,5 @@
 package com.arindam.abode.data.db.dao
 
-import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.arindam.abode.data.db.entity.NoteEntity
 
@@ -25,5 +24,5 @@ interface NoteDao {
 
 
     @Query("SELECT * from entity_note ORDER BY id DESC")
-    fun getAllNotes(): LiveData<List<NoteEntity>>
+    fun getAllNotes(): List<NoteEntity>
 }
