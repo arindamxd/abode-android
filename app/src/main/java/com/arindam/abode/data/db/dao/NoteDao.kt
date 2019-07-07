@@ -1,6 +1,7 @@
 package com.arindam.abode.data.db.dao
 
 import androidx.room.*
+import com.arindam.abode.data.db.entity.NoteEntity
 
 /**
  * Created by Arindam Karmakar on 2019-07-07.
@@ -10,14 +11,14 @@ import androidx.room.*
 interface NoteDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(entity: NoteDao)
+    fun insert(entity: NoteEntity)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(entities: List<NoteDao>): List<Long>
+    fun insertAll(entities: List<NoteEntity>): List<Long>
 
     @Update
-    fun update(entity: NoteDao)
+    fun update(entity: NoteEntity)
 
     @Delete
-    fun delete(entity: NoteDao)
+    fun delete(entity: NoteEntity)
 }

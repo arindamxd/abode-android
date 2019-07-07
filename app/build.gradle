@@ -8,7 +8,7 @@ android {
     compileSdkVersion versions.compileSdk
 
     defaultConfig {
-        applicationId "com.gojek.abodetask"
+        applicationId "com.arindam.abodetask"
 
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
@@ -52,13 +52,16 @@ dependencies {
     implementation "com.google.dagger:dagger:$versions.dagger"
     kapt "com.google.dagger:dagger-compiler:$versions.dagger"
 
-    // ViewModel and LiveData
-    implementation "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle"
+    // Room components
+    implementation "androidx.room:room-runtime:$versions.room"
+    implementation "androidx.room:room-ktx:$versions.room"
+    kapt "androidx.room:room-compiler:$versions.room"
+    androidTestImplementation "androidx.room:room-testing:$versions.room"
 
-    // Room
-    implementation "android.arch.persistence.room:runtime:$versions.room"
-    kapt "android.arch.persistence.room:compiler:$versions.room"
-    implementation "android.arch.persistence.room:rxjava2:$versions.room"
+    // Lifecycle components
+    implementation "androidx.lifecycle:lifecycle-extensions:$versions.androidx_arch"
+    kapt "androidx.lifecycle:lifecycle-compiler:$versions.lifecycle"
+    androidTestImplementation "androidx.arch.core:core-testing:$versions.androidx_arch"
 
     // Local + Instrumentation Test
     testImplementation "junit:junit:$versions.junit"

@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull
  */
 
 @Entity(tableName = "entity_note")
-data class Note(
+data class NoteEntity(
 
     @NotNull
     @PrimaryKey(autoGenerate = true)
