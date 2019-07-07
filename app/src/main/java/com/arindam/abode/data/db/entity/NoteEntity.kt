@@ -18,7 +18,7 @@ data class NoteEntity(
     var id: Int,
 
     @ColumnInfo(name = "title")
-    var title: String = "Title",
+    var title: String? = null,
 
     @ColumnInfo(name = "description")
     var description: String? = null

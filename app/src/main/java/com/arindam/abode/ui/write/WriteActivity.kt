@@ -16,12 +16,15 @@ class WriteActivity : BaseActivity<WriteViewModel>() {
     override fun injectDependencies(activityComponent: ActivityComponent) = activityComponent.inject(this)
 
     override fun setupView(savedInstanceState: Bundle?) {
-        // Check for isEdit to set Header Logic
+        // Check for isEdit to set Header Text
+        intent.extras?.let {
 
+        }
 
         backButton.setOnClickListener { finish() }
         saveButton.setOnClickListener {
-            // Save to database
+            val note = noteText.text.toString()
+            viewModel.saveNote(note)
             finish()
         }
     }

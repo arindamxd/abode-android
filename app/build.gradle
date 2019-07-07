@@ -52,16 +52,24 @@ dependencies {
     implementation "com.google.dagger:dagger:$versions.dagger"
     kapt "com.google.dagger:dagger-compiler:$versions.dagger"
 
-    // Room components
+    // Room
     implementation "androidx.room:room-runtime:$versions.room"
     implementation "androidx.room:room-ktx:$versions.room"
     kapt "androidx.room:room-compiler:$versions.room"
     androidTestImplementation "androidx.room:room-testing:$versions.room"
 
-    // Lifecycle components
+    // Lifecycle
     implementation "androidx.lifecycle:lifecycle-extensions:$versions.androidx_arch"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle_viewmodel_ktx"
     kapt "androidx.lifecycle:lifecycle-compiler:$versions.lifecycle"
     androidTestImplementation "androidx.arch.core:core-testing:$versions.androidx_arch"
+
+    // Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines"
+
+    // Debug DB
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
 
     // Local + Instrumentation Test
     testImplementation "junit:junit:$versions.junit"
