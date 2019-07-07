@@ -27,5 +27,5 @@ class ApplicationModule(private val application: TaskApplication) {
 
     @Provides
     @Singleton
-    fun provideRoomDatabaseService(): RoomDatabaseService = RoomDatabaseService()
+    fun provideRoomDatabaseService(): RoomDatabaseService = RoomDatabaseService.buildDatabase(application.applicationContext)
 }
