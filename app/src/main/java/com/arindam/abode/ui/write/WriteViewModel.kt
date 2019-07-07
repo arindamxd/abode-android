@@ -1,4 +1,4 @@
-package com.arindam.abode.ui.home
+package com.arindam.abode.ui.write
 
 import com.arindam.abode.data.db.RoomDatabaseService
 import com.arindam.abode.ui.base.BaseViewModel
@@ -7,6 +7,6 @@ import com.arindam.abode.ui.base.BaseViewModel
  * Created by Arindam Karmakar on 2019-07-07.
  */
 
-class HomeViewModel(roomDatabaseService: RoomDatabaseService) : BaseViewModel(roomDatabaseService) {
+class WriteViewModel(roomDatabaseService: RoomDatabaseService) : BaseViewModel(roomDatabaseService) {
 
 }

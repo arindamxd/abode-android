@@ -1,4 +1,4 @@
-package com.arindam.abode.ui.home
+package com.arindam.abode.ui.write
 
 import android.os.Bundle
 import com.arindam.abode.R
@@ -9,9 +9,9 @@ import com.arindam.abode.ui.base.BaseActivity
  * Created by Arindam Karmakar on 2019-07-07.
  */
 
-class HomeActivity: BaseActivity<HomeViewModel>() {
+class WriteActivity : BaseActivity<WriteViewModel>() {
 
-    override fun provideLayoutId() = R.layout.activity_home
+    override fun provideLayoutId() = R.layout.activity_write
     override fun injectDependencies(activityComponent: ActivityComponent) = activityComponent.inject(this)
 
     override fun setupView(savedInstanceState: Bundle?) {

@@ -3,6 +3,7 @@ package com.arindam.abode.di.component
 import com.arindam.abode.di.ActivityScope
 import com.arindam.abode.di.module.ActivityModule
 import com.arindam.abode.ui.home.HomeActivity
+import com.arindam.abode.ui.write.WriteActivity
 import dagger.Component
 
 /**
@@ -17,4 +18,5 @@ import dagger.Component
 interface ActivityComponent {
 
     fun inject(activity: HomeActivity)
+    fun inject(activity: WriteActivity)
 }
