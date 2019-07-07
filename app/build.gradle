@@ -52,6 +52,9 @@ dependencies {
     implementation "com.google.dagger:dagger:$versions.dagger"
     kapt "com.google.dagger:dagger-compiler:$versions.dagger"
 
+    // ViewModel and LiveData
+    implementation "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle"
+
     // Room
     implementation "android.arch.persistence.room:runtime:$versions.room"
     kapt "android.arch.persistence.room:compiler:$versions.room"
