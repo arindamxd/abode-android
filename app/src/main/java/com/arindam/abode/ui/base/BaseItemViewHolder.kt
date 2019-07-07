@@ -1,6 +1,7 @@
 package com.arindam.abode.ui.base
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.lifecycle.Lifecycle
@@ -29,12 +30,10 @@ abstract class BaseItemViewHolder<T : Any, VM : BaseItemViewModel<T>>(
 
     @Inject
     lateinit var viewModel: VM
-
     @Inject
     lateinit var lifecycleRegistry: LifecycleRegistry
 
     override fun getLifecycle(): Lifecycle = lifecycleRegistry
-
     open fun bind(data: T) {
         viewModel.updateData(data)
     }
@@ -71,4 +70,5 @@ abstract class BaseItemViewHolder<T : Any, VM : BaseItemViewModel<T>>(
 
     protected open fun setupObservers() {}
     protected abstract fun injectDependencies(viewHolderComponent: ViewHolderComponent)
+    abstract fun setupView(view: View)
 }

@@ -1,11 +1,15 @@
 package com.arindam.abode.ui.home
 
+import android.content.Intent
+import android.util.Log
+import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import com.arindam.abode.R
 import com.arindam.abode.data.db.entity.NoteEntity
 import com.arindam.abode.di.component.ViewHolderComponent
 import com.arindam.abode.ui.base.BaseItemViewHolder
+import com.arindam.abode.ui.write.WriteActivity
 import kotlinx.android.synthetic.main.layout_home_item_view.view.*
 
 /**
@@ -19,6 +23,7 @@ class HomeItemViewHolder(
 ) {
 
     override fun injectDependencies(viewHolderComponent: ViewHolderComponent) = viewHolderComponent.inject(this)
+
     override fun setupObservers() {
         super.setupObservers()
 
@@ -31,5 +36,13 @@ class HomeItemViewHolder(
         viewModel.date.observe(this, Observer {
             itemView.itemDate.text = it
         })
+    }
+
+    override fun setupView(view: View) {
+        view.setOnClickListener {
+            Log.e("XD", viewModel.title.value)
+            view.context.startActivity(Intent(view.context, WriteActivity::class.java))
+            viewModel.onItemClick(adapterPosition)
+        }
     }
 }
