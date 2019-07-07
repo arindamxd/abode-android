@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">StayAbodeTask</string>
+
+    <string name="roboto_thin">roboto.thin.ttf</string>
+    <string name="roboto_black">roboto.black.ttf</string>
+    <string name="roboto_regular">roboto.regular.ttf</string>
+
+    <string name="button_back">back button</string>
+    <string name="button_save">save button</string>
+
+    <string name="note_new">New Note</string>
+    <string name="note_edit">Edit Note</string>
+    <string name="note_hint">Write here...</string>
 </resources>

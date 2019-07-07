@@ -1,4 +1,4 @@
-package com.arindam.abode.utils
+package com.arindam.abode.utils.factory
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

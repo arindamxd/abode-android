@@ -6,7 +6,7 @@ import com.arindam.abode.data.db.RoomDatabaseService
 import com.arindam.abode.ui.base.BaseActivity
 import com.arindam.abode.ui.home.HomeViewModel
 import com.arindam.abode.ui.write.WriteViewModel
-import com.arindam.abode.utils.ViewModelProviderFactory
+import com.arindam.abode.utils.factory.ViewModelProviderFactory
 import dagger.Module
 import dagger.Provides
 

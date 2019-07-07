@@ -38,8 +38,6 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() {
 
     @LayoutRes
     protected abstract fun provideLayoutId(): Int
-
     protected abstract fun injectDependencies(activityComponent: ActivityComponent)
-
     protected abstract fun setupView(savedInstanceState: Bundle?)
 }
