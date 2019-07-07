@@ -20,6 +20,7 @@ class HomeViewModel(roomDatabaseService: RoomDatabaseService) : BaseViewModel(ro
 
     fun fetchDataList() {
         viewModelScope.launch(Dispatchers.IO) {
+            delay(300)
             noteListLiveData.postValue(roomDatabaseService.noteDao().getAllNotes())
         }
     }

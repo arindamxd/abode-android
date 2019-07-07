@@ -97,7 +97,7 @@ abstract class BaseAdapter<T : Any, VH : BaseItemViewHolder<T, out BaseItemViewM
 
         if (oldCount == 0 && currentCount > 0) {
             notifyDataSetChanged()
-        } else if (oldCount > 0 && currentCount > oldCount) {
+        } else if (oldCount in 1 until currentCount) {
             notifyItemRangeChanged(oldCount - 1, currentCount - oldCount)
         }
     }

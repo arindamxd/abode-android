@@ -2,6 +2,7 @@ package com.arindam.abode.ui.home
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.arindam.abode.R
@@ -28,7 +29,10 @@ class HomeActivity: BaseActivity<HomeViewModel>() {
     override fun setupObservers() {
         super.setupObservers()
 
-        viewModel.getNotesData().observe(this, Observer { it?.run { homeAdapter.appendData(ArrayList(it)) } })
+        viewModel.getNotesData().observe(this, Observer {
+            homeAdapter.appendData(ArrayList(it))
+            Log.e("XD", "${homeAdapter == null} ++ ${it.size}")
+        })
     }
 
     override fun setupView(savedInstanceState: Bundle?) {

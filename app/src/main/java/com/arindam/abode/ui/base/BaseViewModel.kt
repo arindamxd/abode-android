@@ -14,5 +14,6 @@ abstract class BaseViewModel(protected val roomDatabaseService: RoomDatabaseServ
 
         // Release Resources
         // roomDatabaseService.close()
+        // viewModelScope.cancel()
     }
 }
