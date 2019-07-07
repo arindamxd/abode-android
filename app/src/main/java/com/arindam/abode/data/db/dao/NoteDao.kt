@@ -23,6 +23,6 @@ interface NoteDao {
     fun delete(entity: NoteEntity)
 
 
-    @Query("SELECT * from entity_note ORDER BY id DESC")
+    @Query("SELECT * from entity_note ORDER BY id ASC")
     fun getAllNotes(): List<NoteEntity>
 }
