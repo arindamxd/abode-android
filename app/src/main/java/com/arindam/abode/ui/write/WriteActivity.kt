@@ -1,9 +1,11 @@
 package com.arindam.abode.ui.write
 
 import android.os.Bundle
+import android.text.Editable
 import com.arindam.abode.R
 import com.arindam.abode.di.component.ActivityComponent
 import com.arindam.abode.ui.base.BaseActivity
+import com.arindam.abode.utils.common.Constant
 import kotlinx.android.synthetic.main.activity_write.*
 
 /**
@@ -16,9 +18,12 @@ class WriteActivity : BaseActivity<WriteViewModel>() {
     override fun injectDependencies(activityComponent: ActivityComponent) = activityComponent.inject(this)
 
     override fun setupView(savedInstanceState: Bundle?) {
-        // Check for isEdit to set Header Text
-        intent.extras?.let {
-
+        viewModel.setNoteInfo(intent.extras)
+        if (viewModel.isEdit()) {
+            headerText?.text = this@WriteActivity.getString(R.string.note_edit)
+            noteText.setText(viewModel.getEditNoteText())
+        } else {
+            headerText?.text = this@WriteActivity.getString(R.string.note_new)
         }
 
         backButton.setOnClickListener { finish() }

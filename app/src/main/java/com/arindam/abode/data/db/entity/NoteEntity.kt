@@ -19,10 +19,10 @@ data class NoteEntity(
     var id: Int,
 
     @ColumnInfo(name = "title")
-    var title: String? = null,
+    var title: String = String(),
 
     @ColumnInfo(name = "description")
-    var description: String? = null,
+    var description: String = String(),
 
     @NotNull
     @ColumnInfo(name = "timestamp")

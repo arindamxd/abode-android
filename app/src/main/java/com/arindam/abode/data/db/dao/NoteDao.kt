@@ -1,6 +1,9 @@
 package com.arindam.abode.data.db.dao
 
-import androidx.room.*
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
 import com.arindam.abode.data.db.entity.NoteEntity
 
 /**
@@ -13,16 +16,12 @@ interface NoteDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(entity: NoteEntity)
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(entities: List<NoteEntity>): List<Long>
-
-    @Update
-    fun update(entity: NoteEntity)
-
-    @Delete
-    fun delete(entity: NoteEntity)
-
-
-    @Query("SELECT * from entity_note ORDER BY id ASC")
+    @Query("SELECT * FROM entity_note ORDER BY id ASC")
     fun getAllNotes(): List<NoteEntity>
+
+    @Query("SELECT description FROM entity_note WHERE id =:noteId")
+    fun getNoteTextById(noteId: Int): String
+
+    @Query("UPDATE entity_note SET description =:noteText WHERE id =:noteId")
+    fun updateNoteById(noteId: Int, noteText: String)
 }

@@ -43,6 +43,7 @@ abstract class BaseItemViewHolder<T : Any, VM : BaseItemViewModel<T>>(
         lifecycleRegistry.markState(Lifecycle.State.INITIALIZED)
         lifecycleRegistry.markState(Lifecycle.State.CREATED)
         setupObservers()
+        setupView(itemView)
     }
 
     fun onStart() {

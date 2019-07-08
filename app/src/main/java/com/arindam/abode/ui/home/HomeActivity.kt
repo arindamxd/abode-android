@@ -2,7 +2,6 @@ package com.arindam.abode.ui.home
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.arindam.abode.R
@@ -16,7 +15,7 @@ import javax.inject.Inject
  * Created by Arindam Karmakar on 2019-07-07.
  */
 
-class HomeActivity: BaseActivity<HomeViewModel>() {
+class HomeActivity : BaseActivity<HomeViewModel>() {
 
     @Inject
     lateinit var linearLayoutManager: LinearLayoutManager

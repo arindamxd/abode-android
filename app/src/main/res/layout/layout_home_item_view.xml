@@ -10,12 +10,15 @@
         app:cardUseCompatPadding="true">
 
     <RelativeLayout
+            android:id="@+id/rootItem"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:paddingTop="15dp"
             android:paddingBottom="15dp"
+            android:clickable="true"
+            android:focusable="true"
             android:background="@drawable/card_stroke_background">
 
         <RelativeLayout
