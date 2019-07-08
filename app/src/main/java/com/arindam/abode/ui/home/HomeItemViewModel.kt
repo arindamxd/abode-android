@@ -3,7 +3,6 @@ package com.arindam.abode.ui.home
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
 import com.arindam.abode.data.db.RoomDatabaseService

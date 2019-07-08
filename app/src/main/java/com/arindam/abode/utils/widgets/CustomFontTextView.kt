@@ -7,7 +7,6 @@ import android.util.AttributeSet
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import com.arindam.abode.R
-import java.lang.Exception
 
 /**
  * Created by Arindam Karmakar on 2019-07-07.

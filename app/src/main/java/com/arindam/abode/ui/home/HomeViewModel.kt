@@ -18,8 +18,8 @@ import kotlinx.coroutines.launch
 class HomeViewModel(roomDatabaseService: RoomDatabaseService) : BaseViewModel(roomDatabaseService) {
 
     private val noteListLiveData: MutableLiveData<List<NoteEntity>> = MutableLiveData()
-    fun getNotesData(): LiveData<List<NoteEntity>> = Transformations.map(noteListLiveData) { it }
 
+    fun getNotesData(): LiveData<List<NoteEntity>> = Transformations.map(noteListLiveData) { it }
     fun fetchDataList() {
         viewModelScope.launch(Dispatchers.IO) {
             delay(300)

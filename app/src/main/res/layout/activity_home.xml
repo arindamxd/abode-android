@@ -9,7 +9,7 @@
     <RelativeLayout
             android:id="@+id/header"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="@dimen/toolbar_height"
             app:layout_constraintTop_toTopOf="parent">
 
         <com.arindam.abode.utils.widgets.CustomFontTextView
@@ -17,7 +17,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="@string/notes"
-                android:textSize="20sp"
+                android:textSize="@dimen/header_text"
                 android:textColor="@color/black"
                 app:custom_font="@string/roboto_regular"/>
 
@@ -26,12 +26,12 @@
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:paddingLeft="16dp"
-            android:paddingStart="16dp"
-            android:paddingRight="16dp"
-            android:paddingEnd="16dp"
-            android:paddingBottom="10dp"
+            android:layout_height="@dimen/zero"
+            android:paddingLeft="@dimen/rv_padding_side"
+            android:paddingStart="@dimen/rv_padding_side"
+            android:paddingRight="@dimen/rv_padding_side"
+            android:paddingEnd="@dimen/rv_padding_side"
+            android:paddingBottom="@dimen/rv_padding_bottom"
             android:clipToPadding="false"
             android:overScrollMode="never"
             app:layout_constraintTop_toBottomOf="@+id/header"
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:clickable="true"
             android:focusable="true"
-            android:layout_margin="20dp"
+            android:layout_margin="@dimen/header_text"
             android:src="@drawable/ic_add_white_48dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>

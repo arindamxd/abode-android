@@ -15,9 +15,7 @@ import kotlinx.android.synthetic.main.layout_home_item_view.view.*
 
 class HomeItemViewHolder(
     parent: ViewGroup
-) : BaseItemViewHolder<NoteEntity, HomeItemViewModel>(
-    R.layout.layout_home_item_view, parent
-) {
+) : BaseItemViewHolder<NoteEntity, HomeItemViewModel>(R.layout.layout_home_item_view, parent) {
 
     private var noteId: Int? = null
 

@@ -10,13 +10,13 @@
     <RelativeLayout
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="@dimen/toolbar_height"
             android:orientation="horizontal"
             app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
                 android:id="@+id/backButton"
-                android:layout_width="50dp"
+                android:layout_width="@dimen/toolbar_height"
                 android:layout_height="match_parent"
                 android:padding="12dp"
                 android:src="@drawable/ic_arrow_back_black_24dp"
@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="@string/note_new"
-                android:textSize="20sp"
+                android:textSize="@dimen/header_text"
                 android:textColor="@color/black"
                 app:custom_font="@string/roboto_regular"/>
 
@@ -39,7 +39,7 @@
             android:id="@+id/noteText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="@dimen/header_text"
             android:background="@android:color/transparent"
             android:hint="@string/note_hint"
             android:maxLines="15"
@@ -50,14 +50,14 @@
     <RelativeLayout
             android:id="@+id/saveButton"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="@dimen/button_save_height"
             android:background="@drawable/button_background"
-            android:layout_margin="15dp"
+            android:layout_margin="@dimen/button_save_margin"
             app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="@dimen/button_save_icon"
+                android:layout_height="@dimen/button_save_icon"
                 android:layout_centerInParent="true"
                 android:src="@drawable/ic_check_white_24dp"
                 android:contentDescription="@string/button_save"/>

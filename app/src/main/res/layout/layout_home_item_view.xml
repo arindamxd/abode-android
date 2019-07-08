@@ -4,19 +4,19 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
-        app:cardCornerRadius="4dp"
-        app:cardElevation="6dp"
+        android:layout_height="@dimen/card_height"
+        app:cardCornerRadius="@dimen/card_radius"
+        app:cardElevation="@dimen/card_elevation"
         app:cardUseCompatPadding="true">
 
     <RelativeLayout
             android:id="@+id/rootItem"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
+            android:paddingLeft="@dimen/header_text"
+            android:paddingRight="@dimen/header_text"
+            android:paddingTop="@dimen/button_save_margin"
+            android:paddingBottom="@dimen/button_save_margin"
             android:clickable="true"
             android:focusable="true"
             android:background="@drawable/card_stroke_background">
@@ -25,7 +25,7 @@
                 android:id="@+id/itemHeader"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="@dimen/rv_padding_bottom">
 
             <com.arindam.abode.utils.widgets.CustomFontTextView
                     android:id="@+id/itemTitle"
@@ -33,7 +33,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
-                    android:textSize="14sp"
+                    android:textSize="@dimen/card_font_l"
                     android:textColor="@color/colorPrimaryDark"
                     android:textStyle="bold"
                     app:custom_font="@string/roboto_regular"/>
@@ -44,7 +44,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
-                    android:textSize="12sp"
+                    android:textSize="@dimen/card_font_s"
                     app:custom_font="@string/roboto_regular"/>
 
         </RelativeLayout>
@@ -56,8 +56,8 @@
                 android:layout_below="@+id/itemHeader"
                 android:maxLines="3"
                 android:ellipsize="end"
-                android:lineSpacingExtra="4dp"
-                android:textSize="13sp"
+                android:lineSpacingExtra="@dimen/card_radius"
+                android:textSize="@dimen/card_font_m"
                 android:textColor="@color/black"
                 app:custom_font="@string/roboto_regular"/>
 

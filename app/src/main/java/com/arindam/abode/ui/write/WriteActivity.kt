@@ -1,11 +1,10 @@
 package com.arindam.abode.ui.write
 
 import android.os.Bundle
-import android.text.Editable
+import androidx.lifecycle.Observer
 import com.arindam.abode.R
 import com.arindam.abode.di.component.ActivityComponent
 import com.arindam.abode.ui.base.BaseActivity
-import com.arindam.abode.utils.common.Constant
 import kotlinx.android.synthetic.main.activity_write.*
 
 /**
@@ -19,9 +18,10 @@ class WriteActivity : BaseActivity<WriteViewModel>() {
 
     override fun setupView(savedInstanceState: Bundle?) {
         viewModel.setNoteInfo(intent.extras)
+
         if (viewModel.isEdit()) {
             headerText?.text = this@WriteActivity.getString(R.string.note_edit)
-            noteText.setText(viewModel.getEditNoteText())
+            viewModel.getEditNoteText().observe(this, Observer { noteText.setText(it) })
         } else {
             headerText?.text = this@WriteActivity.getString(R.string.note_new)
         }
@@ -31,5 +31,11 @@ class WriteActivity : BaseActivity<WriteViewModel>() {
             viewModel.saveNote(noteText.text.toString())
             finish()
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        viewModel.getEditNoteText().removeObservers(this)
     }
 }

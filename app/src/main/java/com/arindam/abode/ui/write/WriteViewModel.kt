@@ -1,6 +1,8 @@
 package com.arindam.abode.ui.write
 
 import android.os.Bundle
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.arindam.abode.data.db.RoomDatabaseService
 import com.arindam.abode.data.db.entity.NoteEntity
@@ -16,12 +18,11 @@ import kotlinx.coroutines.launch
 class WriteViewModel(roomDatabaseService: RoomDatabaseService) : BaseViewModel(roomDatabaseService) {
 
     private var isEdit: Boolean = false
-
     private var editNoteId: Int? = null
-    private var editNoteText: String = String()
+    private var editNoteText: MutableLiveData<String> = MutableLiveData()
 
     fun isEdit(): Boolean = isEdit
-    fun getEditNoteText(): String = editNoteText
+    fun getEditNoteText(): LiveData<String> = editNoteText
 
     fun setNoteInfo(extras: Bundle?) {
         isEdit = extras?.getBoolean(Constant.IS_EDIT_PAGE) ?: false
@@ -29,7 +30,7 @@ class WriteViewModel(roomDatabaseService: RoomDatabaseService) : BaseViewModel(r
 
         editNoteId?.let {
             viewModelScope.launch(Dispatchers.IO) {
-                editNoteText = roomDatabaseService.noteDao().getNoteTextById(it)
+                editNoteText.postValue(roomDatabaseService.noteDao().getNoteTextById(it))
             }
         }
     }

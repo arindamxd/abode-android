@@ -28,7 +28,10 @@ class HomeActivity : BaseActivity<HomeViewModel>() {
     override fun setupObservers() {
         super.setupObservers()
 
-        viewModel.getNotesData().observe(this, Observer { homeAdapter.appendData(ArrayList(it)) })
+        viewModel.getNotesData().observe(this, Observer {
+            homeAdapter.appendData(ArrayList(it))
+            homeAdapter.notifyDataSetChanged()
+        })
     }
 
     override fun setupView(savedInstanceState: Bundle?) {
